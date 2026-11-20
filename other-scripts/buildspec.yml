@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+  build:
+    commands:
+      - echo "Packaging Lambda functions..."
+      - cd lambda/LF1 && zip -r lf1.zip lambda_function.py && cd ../..
+      - cd lambda/LF2 && zip -r lf2.zip lambda_function.py && cd ../..
+  post_build:
+    commands:
+      - echo "Updating Lambda index-photos..."
+      - aws lambda update-function-code --function-name index-photos --zip-file fileb://lambda/LF1/lf1.zip
+      - echo "Updating Lambda search-photos..."
+      - aws lambda update-function-code --function-name search-photos --zip-file fileb://lambda/LF2/lf2.zip
+      - echo "Lambda deployment completed successfully!"
