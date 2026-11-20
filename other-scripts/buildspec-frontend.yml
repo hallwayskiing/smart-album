@@ -3,6 +3,6 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo "Deploying frontend to S3 bucket photo-album-frontend-952376465122..."
-      - aws s3 sync frontend/ s3://photo-album-frontend-952376465122 --exclude "apiGateway-js-sdk.zip" --exclude "sdk/*"
+      - echo "Deploying front-end to S3 bucket photo-album-frontend-952376465122..."
+      - aws s3 sync front-end/ s3://photo-album-frontend-952376465122 --exclude "apiGateway-js-sdk.zip" --exclude "sdk/*"
       - echo "Frontend deployment completed successfully!"
