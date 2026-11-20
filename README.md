@@ -11,24 +11,24 @@ A serverless, intelligent photo album web application deployed on AWS that suppo
 ## Repository Structure
 
 ```text
-├── front-end/               # Web client files deployed to S3 static website
-│   ├── index.html           # Main HTML UI for upload and search
-│   ├── main.js              # Client logic, search handling, API integration
-│   ├── apigClient.js        # API Gateway generated JavaScript SDK
-│   └── lib/                 # SDK dependencies (axios, CryptoJS, url-template)
-│
-├── lambda-functions/        # AWS Lambda serverless backend functions
-│   ├── LF1.py               # index-photos: Rekognition & metadata extraction
-│   ├── LF2.py               # search-photos: Lex disambiguation & OpenSearch query
-│   ├── LF1/lambda_function.py
-│   └── LF2/lambda_function.py
-│
-└── other-scripts/           # Infrastructure as Code & DevOps configurations
-    ├── template.yaml        # CloudFormation template for the stack
-    ├── buildspec.yml        # CodeBuild spec for Lambda CI/CD
-    ├── buildspec-frontend.yml # CodeBuild spec for Frontend S3 deployment
-    ├── setup_apigw.py       # API Gateway, S3 Proxy & SDK generation script
-    └── api_config.json      # Deployed API IDs and endpoints reference
++-- front-end/               # Web client files deployed to S3 static website
+|   +-- index.html           # Main HTML UI for upload and search
+|   +-- main.js              # Client logic, search handling, API integration
+|   +-- apigClient.js        # API Gateway generated JavaScript SDK
+|   \-- lib/                 # SDK dependencies (axios, CryptoJS, url-template)
+|
++-- lambda-functions/        # AWS Lambda serverless backend functions
+|   +-- LF1.py               # index-photos: Rekognition & metadata extraction
+|   +-- LF2.py               # search-photos: Lex disambiguation & OpenSearch query
+|   +-- LF1/lambda_function.py
+|   \-- LF2/lambda_function.py
+|
+\-- other-scripts/           # Infrastructure as Code & DevOps configurations
+    +-- template.yaml        # CloudFormation template for the stack
+    +-- buildspec.yml        # CodeBuild spec for Lambda CI/CD
+    +-- buildspec-frontend.yml # CodeBuild spec for Frontend S3 deployment
+    +-- setup_apigw.py       # API Gateway, S3 Proxy & SDK generation script
+    \-- api_config.json      # Deployed API IDs and endpoints reference
 ```
 
 ---
